@@ -12,14 +12,14 @@ import org.apache.commons.validator.routines.CreditCardValidator;
  *
  * @author Antonio
  */
-public class ventana2 extends javax.swing.JDialog {
+public class Window2 extends javax.swing.JDialog {
 
     /**
      * Creates new form ventana2
      * @param parent
      * @param modal
      */
-    public ventana2(java.awt.Frame parent, boolean modal) {
+    public Window2(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         getRootPane().setDefaultButton(jButtonCheck); 
@@ -130,8 +130,8 @@ public class ventana2 extends javax.swing.JDialog {
     private void jButtonCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCheckActionPerformed
         //Realizamos la comprobacion de si existe o no la tarjeta de credito
         CreditCardValidator ccValidator = new CreditCardValidator();
-        boolean tarjetaValida = ccValidator.isValid(jTextFieldCode.getText());
-        String mensaje = tarjetaValida ? "Tarjeta válida" : "Tarjeta no válida";
+        boolean cardValid = ccValidator.isValid(jTextFieldCode.getText());
+        String mensaje = cardValid ? "Tarjeta válida" : "Tarjeta no válida";
         JOptionPane.showMessageDialog(this, mensaje);
     }//GEN-LAST:event_jButtonCheckActionPerformed
 
@@ -152,21 +152,22 @@ public class ventana2 extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ventana2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Window2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ventana2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Window2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ventana2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Window2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ventana2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Window2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                ventana2 dialog = new ventana2(new javax.swing.JFrame(), true);
+                Window2 dialog = new Window2(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

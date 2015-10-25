@@ -59,8 +59,8 @@ public class Facture extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel4 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jButtonPay = new javax.swing.JButton();
+        jButtonPayWithCard = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jTextFieldPrice = new javax.swing.JTextField();
         jTextFieldPrice1 = new javax.swing.JTextField();
@@ -102,7 +102,7 @@ public class Facture extends javax.swing.JFrame {
         jButtonPrecioTotal = new javax.swing.JButton();
         jTextFieldTotalPrice = new javax.swing.JTextField();
         jPanel10 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        jButtonVersion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setIconImage(getIconImage());
@@ -113,21 +113,21 @@ public class Facture extends javax.swing.JFrame {
         jLabel4.setText("CONCEPTO");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 91, 80, 30));
 
-        jButton2.setLabel("Pagar  contra-reembolso");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonPay.setLabel("Pagar  contra-reembolso");
+        jButtonPay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButtonPayActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, -1, -1));
+        getContentPane().add(jButtonPay, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, -1, -1));
 
-        jButton3.setText("Pagar con tarjeta");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jButtonPayWithCard.setText("Pagar con tarjeta");
+        jButtonPayWithCard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jButtonPayWithCardActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 330, 147, -1));
+        getContentPane().add(jButtonPayWithCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 330, 147, -1));
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -451,15 +451,15 @@ public class Facture extends javax.swing.JFrame {
 
         getContentPane().add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 30, -1, 40));
 
-        jButton1.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
-        jButton1.setText("Acerca de");
-        jButton1.setBorder(null);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonVersion.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
+        jButtonVersion.setText("Acerca de");
+        jButtonVersion.setBorder(null);
+        jButtonVersion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonVersionActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(551, 340, 60, -1));
+        getContentPane().add(jButtonVersion, new org.netbeans.lib.awtextra.AbsoluteConstraints(551, 340, 60, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -467,7 +467,7 @@ public class Facture extends javax.swing.JFrame {
     private void jButtonPrecioTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPrecioTotalActionPerformed
         /*Inroducimos un sonido para que se reproduzca a la hora de realizar 
         la acción del botón.*/
-    try {
+      try {
         Player player = new Player(getClass().getResourceAsStream("/sounds/BubblePo.mp3"));
         player.play();
         player.close();
@@ -520,9 +520,9 @@ public class Facture extends javax.swing.JFrame {
         jTextFieldTotalPrice.setText(String.valueOf(totalFormat.format(totalEuros)));
     }//GEN-LAST:event_jButtonPrecioTotalActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-    
-    try {
+    private void jButtonPayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPayActionPerformed
+    //Reproducimos un sonido a la hora de realizar la accion del boton.
+      try {
         Player player = new Player(getClass().getResourceAsStream("/sounds/pop.mp3"));
         player.play();
         player.close();
@@ -535,22 +535,23 @@ public class Facture extends javax.swing.JFrame {
         JOptionPane.showConfirmDialog(this,"¿Desear efectuar la compra?", 
                 "Pago Contra-reembolso", DEFAULT_OPTION, WARNING_MESSAGE);
         
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButtonPayActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-    try {
+    private void jButtonPayWithCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPayWithCardActionPerformed
+    //Volvemos a reproducir el mismo sonido a la hora de realizar la accion del boton.
+      try {
         Player player = new Player(getClass().getResourceAsStream("/sounds/pop.mp3"));
         player.play();
         player.close();
     } catch (Exception e) {
         System.out.println("Error al reproducir el audio");
     } 
-        new ventana2 (this, true).setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+        new Window2 (this, true).setVisible(true);
+    }//GEN-LAST:event_jButtonPayWithCardActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new ventana1(this, true).setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void jButtonVersionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVersionActionPerformed
+        new Window1(this, true).setVisible(true);
+    }//GEN-LAST:event_jButtonVersionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -588,10 +589,10 @@ public class Facture extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButtonPay;
+    private javax.swing.JButton jButtonPayWithCard;
     private javax.swing.JButton jButtonPrecioTotal;
+    private javax.swing.JButton jButtonVersion;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
